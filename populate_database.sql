@@ -1,3 +1,5 @@
+--Created by: Chinonso Unegbu, Ethan Waugh, Johnny Tsan, Matt Johnson
+
 -- Setup enums
 INSERT INTO [SpaceType](Name)
 VALUES
