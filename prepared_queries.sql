@@ -1,3 +1,5 @@
+--Created by: Chinonso Unegbu, Ethan Waugh, Johnny Tsan, Matt Johnson
+
 -- Q1: Uses the OwnerContactInfo view to filter and present important information regarding reaching out to owners for leasing. This view obscures information that is either irrelevant to a frontend user (IDs) or sensitive (passwords, other coworkers)
 
 /*  SQL throws errors when a view is being created and then selected in the same query. Please run the file 'prepared_views.sql' before executing this file.
