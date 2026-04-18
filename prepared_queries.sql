@@ -1,4 +1,7 @@
--- Q1
+-- Q1: Uses the OwnerContactInfo view to filter and present important information regarding reaching out to owners for leasing. This view obscures information that is either irrelevant to a frontend user (IDs) or sensitive (passwords, other coworkers)
+
+/*  SQL throws errors when a view is being created and then selected in the same query. Please run the file 'prepared_views.sql' before executing this file.
+
 IF OBJECT_ID('OwnerContactInfo', 'V') IS NOT NULL
     DROP VIEW OwnerContactInfo;
 GO
@@ -15,13 +18,14 @@ FROM [User] u
 INNER JOIN [UserRole] ur
     ON u.UserRole = ur.TypeID
 WHERE ur.Name = 'Owner';
-GO
+GO */
 
 SELECT * FROM [OwnerContactInfo];
 GO
 
 -- Q2
-IF OBJECT_ID('ViewWorkspaceDetails', 'V') IS NOT NULL
+
+/* IF OBJECT_ID('ViewWorkspaceDetails', 'V') IS NOT NULL
     DROP VIEW ViewWorkspaceDetails;
 GO
 
@@ -35,7 +39,7 @@ SELECT
 FROM [Workspace] w
 INNER JOIN [SpaceType] s
     ON w.Type = s.TypeID;
-GO
+GO */
 
 SELECT * FROM [ViewWorkspaceDetails];
 GO
