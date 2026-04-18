@@ -1,3 +1,5 @@
+--Created by: Chinonso Unegbu, Ethan Waugh, Johnny Tsan, Matt Johnson
+
 --setup OwnerContactInfo (used in Q1)
 IF OBJECT_ID('OwnerContactInfo', 'V') IS NOT NULL
     DROP VIEW OwnerContactInfo;
