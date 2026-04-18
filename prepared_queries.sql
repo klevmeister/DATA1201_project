@@ -23,7 +23,7 @@ GO */
 SELECT * FROM [OwnerContactInfo];
 GO
 
--- Q2
+-- Q2: Uses ViewWorkspaceDetails to pull important information about a workspace for coworker to review. Obscures fields meant for the owner
 
 /* IF OBJECT_ID('ViewWorkspaceDetails', 'V') IS NOT NULL
     DROP VIEW ViewWorkspaceDetails;
@@ -44,9 +44,62 @@ GO */
 SELECT * FROM [ViewWorkspaceDetails];
 GO
 
--- Q3
+-- Q3: Uses ViewLocationOwners to show the names of every owner that owns a location.
+/*CREATE VIEW ViewLocationOwners AS
+SELECT 
+    u.FirstName, 
+    u.LastName, 
+    l.Name, 
+    l.City, 
+    l.Province, 
+    l.Street, 
+    l.PostalCode
+FROM [Location] l
+INNER JOIN [User] u
+    ON u.UserID = l.Owner
+GO */
+
+SELECT * FROM [ViewLocationOwners];
+GO
+
+-- Q4: Filters locations by city name and parking access, then sorts by the area of the property in descending order.
 SELECT Name, City, Area_m2
 FROM [Location]
 WHERE City = 'Calgary'
   AND Parking = 1
 ORDER BY Area_m2 DESC;
+
+-- Q5: Filters locations by province
+SELECT Name, City, Province
+FROM [Location]
+WHERE Province = 2;
+
+-- Q6: Selects owners who have a phone number
+SELECT FirstName, LastName, PhoneNumber
+FROM [User]
+WHERE PhoneNumber IS NOT NULL;
+
+-- Q7: Selects owners who have an email
+SELECT FirstName, LastName, Email
+FROM [User]
+WHERE Email IS NOT NULL;
+
+-- Q7: Selects workspaces which have listed lease prices
+SELECT Name, Type, DailyPrice
+FROM [Workspace]
+WHERE DailyPrice IS NOT NULL;
+
+-- Q8: Selects workspaces with a seating of 5 or greater
+SELECT Name, Type, Seating
+FROM [Workspace]
+WHERE Seating >= 5;
+
+-- Q9: Selects workspaces that are offices
+SELECT Name, Type
+FROM [Workspace]
+WHERE Type = 1;
+
+-- Q10: Selects locations that are 'Downtown' in their respective cities
+SELECT Name, City, Neighborhood
+FROM [Location]
+WHERE Neighborhood = 'Downtown';

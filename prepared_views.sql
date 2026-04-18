@@ -33,3 +33,18 @@ FROM [Workspace] w
 INNER JOIN [SpaceType] s
     ON w.Type = s.TypeID;
 GO
+
+--setup ViewLocationOwners (used in Q3)
+CREATE VIEW ViewLocationOwners AS
+SELECT 
+    u.FirstName, 
+    u.LastName, 
+    l.Name, 
+    l.City, 
+    l.Province, 
+    l.Street, 
+    l.PostalCode
+FROM [Location] l
+INNER JOIN [User] u
+    ON u.UserID = l.Owner
+GO

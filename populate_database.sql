@@ -31,7 +31,7 @@ VALUES
 -- Users
 INSERT INTO [User](FirstName, LastName, PhoneNumber, Email, UserRole)
 VALUES
-    ('Jim', 'Jim', '123-456-7890', 'jim@fakeemail.ca', 1),
+    ('Jim', 'Jimble', '123-456-7890', 'jim@fakeemail.ca', 1),
     ('Bob', NULL, '098-765-4321', 'bob@fakeemail.ca', 2),
     ('Stanley', 'Furgeson', '111-111-1111', NULL, 1),
     ('Joe', 'Schmoe', NULL, 'joe@fakeemail.ca', 2),
