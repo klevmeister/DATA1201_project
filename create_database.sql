@@ -1,3 +1,5 @@
+--Created by: Chinonso Unegbu, Ethan Waugh, Johnny Tsan, Matt Johnson
+
 USE master;
 GO
 
